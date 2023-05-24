@@ -11,6 +11,7 @@
 		B22F125D2A1DE68E000293A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F125C2A1DE68E000293A0 /* SceneDelegate.swift */; };
 		B22F12642A1DE68F000293A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F12632A1DE68F000293A0 /* Assets.xcassets */; };
 		B22F12672A1DE68F000293A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22F12652A1DE68F000293A0 /* LaunchScreen.storyboard */; };
+		B22F126F2A1DE8B0000293A0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B22F126E2A1DE8B0000293A0 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B22F12632A1DE68F000293A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B22F12662A1DE68F000293A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B22F12682A1DE68F000293A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22F126E2A1DE8B0000293A0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				B22F125A2A1DE68E000293A0 /* AppDelegate.swift */,
 				B22F125C2A1DE68E000293A0 /* SceneDelegate.swift */,
 				B22F12632A1DE68F000293A0 /* Assets.xcassets */,
+				B22F126E2A1DE8B0000293A0 /* Podfile */,
 				B22F12652A1DE68F000293A0 /* LaunchScreen.storyboard */,
 				B22F12682A1DE68F000293A0 /* Info.plist */,
 			);
@@ -119,6 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22F126F2A1DE8B0000293A0 /* Podfile in Resources */,
 				B22F12672A1DE68F000293A0 /* LaunchScreen.storyboard in Resources */,
 				B22F12642A1DE68F000293A0 /* Assets.xcassets in Resources */,
 			);
