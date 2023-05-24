@@ -12,16 +12,46 @@
 		B22F12642A1DE68F000293A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F12632A1DE68F000293A0 /* Assets.xcassets */; };
 		B22F12672A1DE68F000293A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22F12652A1DE68F000293A0 /* LaunchScreen.storyboard */; };
 		B22F126F2A1DE8B0000293A0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B22F126E2A1DE8B0000293A0 /* Podfile */; };
+		B27098E62A1DF6C4008FB9A0 /* CastAndCrewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098E52A1DF6C4008FB9A0 /* CastAndCrewVC.swift */; };
+		B27098E82A1DF734008FB9A0 /* MovieFramesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098E72A1DF734008FB9A0 /* MovieFramesVC.swift */; };
+		B27098EB2A1DF75E008FB9A0 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098EA2A1DF75E008FB9A0 /* Cast.swift */; };
+		B27098ED2A1DF770008FB9A0 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098EC2A1DF770008FB9A0 /* Crew.swift */; };
+		B27098EF2A1DF786008FB9A0 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098EE2A1DF786008FB9A0 /* Film.swift */; };
+		B27098F22A1DF7D8008FB9A0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098F12A1DF7D8008FB9A0 /* UIColor.swift */; };
+		B27098F42A1DF7F1008FB9A0 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098F32A1DF7F1008FB9A0 /* UILabel.swift */; };
+		B27098F72A1DFA74008FB9A0 /* ActorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098F62A1DFA74008FB9A0 /* ActorCell.swift */; };
+		B27098F92A1DFC17008FB9A0 /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098F82A1DFC17008FB9A0 /* FrameCell.swift */; };
+		B27098FB2A1DFC5A008FB9A0 /* Backdrops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098FA2A1DFC5A008FB9A0 /* Backdrops.swift */; };
+		B27098FD2A1DFC6E008FB9A0 /* Logos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098FC2A1DFC6E008FB9A0 /* Logos.swift */; };
+		B27098FF2A1DFC8D008FB9A0 /* Posters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098FE2A1DFC8D008FB9A0 /* Posters.swift */; };
+		B27099012A1DFC9E008FB9A0 /* MovieFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27099002A1DFC9E008FB9A0 /* MovieFrames.swift */; };
+		F59CBD561E6D509D52AE7824 /* Pods_DV_Movie_Project_1_01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183E122ED03AF738E17C296A /* Pods_DV_Movie_Project_1_01.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14633BCB65AD31E83B22A27B /* Pods-DV Movie Project 1.01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DV Movie Project 1.01.debug.xcconfig"; path = "Target Support Files/Pods-DV Movie Project 1.01/Pods-DV Movie Project 1.01.debug.xcconfig"; sourceTree = "<group>"; };
+		183E122ED03AF738E17C296A /* Pods_DV_Movie_Project_1_01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DV_Movie_Project_1_01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		693C23EAEF242608E5BE150B /* Pods-DV Movie Project 1.01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DV Movie Project 1.01.release.xcconfig"; path = "Target Support Files/Pods-DV Movie Project 1.01/Pods-DV Movie Project 1.01.release.xcconfig"; sourceTree = "<group>"; };
 		B22F12572A1DE68E000293A0 /* DV Movie Project 1.01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DV Movie Project 1.01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22F125A2A1DE68E000293A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B22F125C2A1DE68E000293A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B22F12632A1DE68F000293A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B22F12662A1DE68F000293A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B22F12682A1DE68F000293A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B22F126E2A1DE8B0000293A0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		B22F126E2A1DE8B0000293A0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B27098E52A1DF6C4008FB9A0 /* CastAndCrewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewVC.swift; sourceTree = "<group>"; };
+		B27098E72A1DF734008FB9A0 /* MovieFramesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFramesVC.swift; sourceTree = "<group>"; };
+		B27098EA2A1DF75E008FB9A0 /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
+		B27098EC2A1DF770008FB9A0 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
+		B27098EE2A1DF786008FB9A0 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		B27098F12A1DF7D8008FB9A0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		B27098F32A1DF7F1008FB9A0 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		B27098F62A1DFA74008FB9A0 /* ActorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
+		B27098F82A1DFC17008FB9A0 /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
+		B27098FA2A1DFC5A008FB9A0 /* Backdrops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backdrops.swift; sourceTree = "<group>"; };
+		B27098FC2A1DFC6E008FB9A0 /* Logos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logos.swift; sourceTree = "<group>"; };
+		B27098FE2A1DFC8D008FB9A0 /* Posters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posters.swift; sourceTree = "<group>"; };
+		B27099002A1DFC9E008FB9A0 /* MovieFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFrames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F59CBD561E6D509D52AE7824 /* Pods_DV_Movie_Project_1_01.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0293B44C378EBA292C7E59C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14633BCB65AD31E83B22A27B /* Pods-DV Movie Project 1.01.debug.xcconfig */,
+				693C23EAEF242608E5BE150B /* Pods-DV Movie Project 1.01.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B22F124E2A1DE68E000293A0 = {
 			isa = PBXGroup;
 			children = (
 				B22F12592A1DE68E000293A0 /* DV Movie Project 1.01 */,
 				B22F12582A1DE68E000293A0 /* Products */,
+				0293B44C378EBA292C7E59C5 /* Pods */,
+				F30820AC59F385073F6D9EF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +96,9 @@
 		B22F12592A1DE68E000293A0 /* DV Movie Project 1.01 */ = {
 			isa = PBXGroup;
 			children = (
+				B27098F02A1DF7B8008FB9A0 /* Extentions */,
+				B27098E92A1DF745008FB9A0 /* Models */,
+				B27098E42A1DF6AE008FB9A0 /* Controllers */,
 				B22F125A2A1DE68E000293A0 /* AppDelegate.swift */,
 				B22F125C2A1DE68E000293A0 /* SceneDelegate.swift */,
 				B22F12632A1DE68F000293A0 /* Assets.xcassets */,
@@ -64,6 +109,56 @@
 			path = "DV Movie Project 1.01";
 			sourceTree = "<group>";
 		};
+		B27098E42A1DF6AE008FB9A0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B27098F52A1DFA65008FB9A0 /* Cells */,
+				B27098E52A1DF6C4008FB9A0 /* CastAndCrewVC.swift */,
+				B27098E72A1DF734008FB9A0 /* MovieFramesVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B27098E92A1DF745008FB9A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B27098EE2A1DF786008FB9A0 /* Film.swift */,
+				B27098EA2A1DF75E008FB9A0 /* Cast.swift */,
+				B27098EC2A1DF770008FB9A0 /* Crew.swift */,
+				B27098FA2A1DFC5A008FB9A0 /* Backdrops.swift */,
+				B27098FC2A1DFC6E008FB9A0 /* Logos.swift */,
+				B27098FE2A1DFC8D008FB9A0 /* Posters.swift */,
+				B27099002A1DFC9E008FB9A0 /* MovieFrames.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B27098F02A1DF7B8008FB9A0 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				B27098F12A1DF7D8008FB9A0 /* UIColor.swift */,
+				B27098F32A1DF7F1008FB9A0 /* UILabel.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		B27098F52A1DFA65008FB9A0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B27098F62A1DFA74008FB9A0 /* ActorCell.swift */,
+				B27098F82A1DFC17008FB9A0 /* FrameCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F30820AC59F385073F6D9EF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				183E122ED03AF738E17C296A /* Pods_DV_Movie_Project_1_01.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B22F126B2A1DE68F000293A0 /* Build configuration list for PBXNativeTarget "DV Movie Project 1.01" */;
 			buildPhases = (
+				4618848EF969A950901E484B /* [CP] Check Pods Manifest.lock */,
 				B22F12532A1DE68E000293A0 /* Sources */,
 				B22F12542A1DE68E000293A0 /* Frameworks */,
 				B22F12552A1DE68E000293A0 /* Resources */,
+				F525F830CF591DC62D2E8637 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +227,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4618848EF969A950901E484B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DV Movie Project 1.01-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F525F830CF591DC62D2E8637 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DV Movie Project 1.01/Pods-DV Movie Project 1.01-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DV Movie Project 1.01/Pods-DV Movie Project 1.01-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DV Movie Project 1.01/Pods-DV Movie Project 1.01-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B22F12532A1DE68E000293A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27099012A1DFC9E008FB9A0 /* MovieFrames.swift in Sources */,
 				B22F125B2A1DE68E000293A0 /* AppDelegate.swift in Sources */,
+				B27098F92A1DFC17008FB9A0 /* FrameCell.swift in Sources */,
+				B27098FF2A1DFC8D008FB9A0 /* Posters.swift in Sources */,
+				B27098FD2A1DFC6E008FB9A0 /* Logos.swift in Sources */,
+				B27098E82A1DF734008FB9A0 /* MovieFramesVC.swift in Sources */,
+				B27098FB2A1DFC5A008FB9A0 /* Backdrops.swift in Sources */,
+				B27098ED2A1DF770008FB9A0 /* Crew.swift in Sources */,
+				B27098F72A1DFA74008FB9A0 /* ActorCell.swift in Sources */,
+				B27098EB2A1DF75E008FB9A0 /* Cast.swift in Sources */,
+				B27098F42A1DF7F1008FB9A0 /* UILabel.swift in Sources */,
+				B27098E62A1DF6C4008FB9A0 /* CastAndCrewVC.swift in Sources */,
+				B27098F22A1DF7D8008FB9A0 /* UIColor.swift in Sources */,
 				B22F125D2A1DE68E000293A0 /* SceneDelegate.swift in Sources */,
+				B27098EF2A1DF786008FB9A0 /* Film.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +422,7 @@
 		};
 		B22F126C2A1DE68F000293A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14633BCB65AD31E83B22A27B /* Pods-DV Movie Project 1.01.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -297,6 +450,7 @@
 		};
 		B22F126D2A1DE68F000293A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 693C23EAEF242608E5BE150B /* Pods-DV Movie Project 1.01.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
