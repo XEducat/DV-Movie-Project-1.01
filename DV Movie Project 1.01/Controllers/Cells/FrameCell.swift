@@ -38,7 +38,7 @@ class FrameCell: UITableViewCell {
     
     /// Налаштовує блок ( cell )
     func configure(with backdrop: Backdrops) {
-        if let filePath = backdrop.file_path {
+        if let filePath = backdrop.filePath {
             let imageUrlString = "https://image.tmdb.org/t/p/w500" + filePath
             AF.request(imageUrlString).responseData { response in
                 switch response.result {

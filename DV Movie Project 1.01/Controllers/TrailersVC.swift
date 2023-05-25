@@ -1,15 +1,14 @@
 import UIKit
 import Alamofire
 
-class CastAndCrewVC: UIViewController {
+class TrailersVC: UIViewController {
     let apiKey = "871ddc96a542d766d2b0fe03fc0ac3d1"
     let tableView = UITableView()
-    var cast: [Cast] = []
+    var videos: [VideoResults] = []
     
-    /// При ініціалізації передається id фільму для завантаження данних
     init(movieID: Int) {
         super.init(nibName: nil, bundle: nil)
-        self.fetchCast(movieID: movieID)
+        self.fetchVideo(movieID: movieID)
     }
     
     required init?(coder: NSCoder) {
@@ -21,13 +20,11 @@ class CastAndCrewVC: UIViewController {
         configure()
     }
     
-    /// Налаштовує view
+    /// Добавляє елементи на view
     private func configure() {
         view.backgroundColor = UIColor.darkBlue
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
         setupTableView()
         setupConstraints()
     }
@@ -36,7 +33,7 @@ class CastAndCrewVC: UIViewController {
     func setupTableView() {
         tableView.backgroundColor = UIColor.darkBlue
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(ActorCell.self, forCellReuseIdentifier: "TableViewCell")
+        tableView.register(TrailerCell.self, forCellReuseIdentifier: "TableViewCell")
     }
     
     /// Виставляє обмеження ( constraints ) для елементів view
@@ -54,15 +51,15 @@ class CastAndCrewVC: UIViewController {
         ])
     }
     
-    /// Підвантажує акторів в масив cast
-    func fetchCast(movieID: Int) {
-        let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(apiKey)"
-        AF.request(url).responseDecodable(of: Film.self) { response in
+    /// Підвантажує треллери в масив videos
+    func fetchVideo(movieID: Int) {
+        let url = "https://api.themoviedb.org/3/movie/\(movieID)/videos?api_key=\(apiKey)"
+        AF.request(url).responseDecodable(of: Video.self) { response in
             switch response.result {
-            case .success(let castResponse):
-                if let cast = castResponse.cast {
-                    self.cast = cast
-                    self.tableView.reloadData()
+            case .success(let videoResponse):
+                if let videos = videoResponse.results {
+                        self.videos = videos
+                        self.tableView.reloadData()
                 }
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
@@ -72,19 +69,19 @@ class CastAndCrewVC: UIViewController {
 }
 
 // MARK: - Extension
-extension CastAndCrewVC: UITableViewDelegate, UITableViewDataSource {
+extension TrailersVC: UITableViewDelegate, UITableViewDataSource {
     /// Віставляє кількість блоків в таблиці ( TableView )
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cast.count
+        return videos.count
     }
     
     /// Повертає налаштований блок ( cell )
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? ActorCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TrailerCell {
             let backgroundView = UIView()
             backgroundView.backgroundColor = .darkBlue
             cell.selectedBackgroundView = backgroundView
-            cell.configCell(cast: cast[indexPath.row])
+            cell.configure(with: videos[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -92,6 +89,6 @@ extension CastAndCrewVC: UITableViewDelegate, UITableViewDataSource {
     
     /// Задає висоту блоку ( cell )
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 300
     }
 }

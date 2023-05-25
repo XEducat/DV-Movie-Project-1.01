@@ -15,12 +15,12 @@ class ActorCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    /// Конфігурує cell(клітінку)
+    /// Налаштовує cell(клітінку)
     public func configCell(cast: Cast) {
         self.backgroundColor = .darkBlue
         
         setupImageView()
-        if let profileImagePath = cast.profile_path {
+        if let profileImagePath = cast.profilePath {
             let profileImageURL = "https://image.tmdb.org/t/p/w500" + profileImagePath
             uploadImage(URL: profileImageURL)
         }

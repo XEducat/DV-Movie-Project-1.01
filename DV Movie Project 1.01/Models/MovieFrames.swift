@@ -1,5 +1,6 @@
 import Foundation
 
+/// Model for movie frames from TMDB
 struct MovieFrames : Codable {
     let backdrops : [Backdrops]?
     let id : Int?
