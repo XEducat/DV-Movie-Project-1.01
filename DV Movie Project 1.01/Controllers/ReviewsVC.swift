@@ -14,7 +14,7 @@ class ReviewsVC: UIViewController {
     
     private var totalRating: UILabel = {  // Загальний рейтинг
         let label = UILabel()
-        label.font = UIFont(name: "Arial", size: 28)
+        label.font = UIFont(name: "Arial", size: 38)
         label.textColor = .white
         return label
     }()
@@ -23,6 +23,14 @@ class ReviewsVC: UIViewController {
         let stackView = UIStackView()
         
         return stackView
+    }()
+    
+    private let totalRewiews: UILabel = {
+        let label = UILabel()
+        let textColor = UIColor(#colorLiteral(red: 0.5297212601, green: 0.5496682525, blue: 0.5879128575, alpha: 1))
+        label.textColor = textColor
+        label.font = UIFont(name: "Arial", size: 22)
+        return label
     }()
     
     /// При ініціалізації передається id фільму для завантаження данних
@@ -46,10 +54,11 @@ class ReviewsVC: UIViewController {
     
     /// Добавляє UITableView на view
     private func configureController() {
+
         commentsTable.delegate = self
         commentsTable.dataSource = self
         
-        [commentsTable, totalRating, totalRatingStars].forEach{
+        [commentsTable, totalRating, totalRatingStars, totalRewiews].forEach{
             self.view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -74,6 +83,12 @@ class ReviewsVC: UIViewController {
             totalRatingStars.centerYAnchor.constraint(equalTo: totalRating.centerYAnchor),
             totalRatingStars.heightAnchor.constraint(equalToConstant: 30)
         ])
+        
+        NSLayoutConstraint.activate([
+            totalRewiews.topAnchor.constraint(equalTo: totalRatingStars.bottomAnchor),
+            totalRewiews.leadingAnchor.constraint(equalTo: totalRatingStars.leadingAnchor, constant: -10),
+            totalRewiews.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     
     /// Підвантажує отзиви з фільму в масив reviews
@@ -86,6 +101,7 @@ class ReviewsVC: UIViewController {
                 if let results = review.results {
                     self.reviews = results
                     self.calculateAverageRating()
+                    self.totalRewiews.text = "\(self.reviews.count) Rewiews"
                     self.commentsTable.reloadData()
                 }
             case .failure(let error):
@@ -150,6 +166,7 @@ extension ReviewsVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    /// Задає висоту cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 320
     }

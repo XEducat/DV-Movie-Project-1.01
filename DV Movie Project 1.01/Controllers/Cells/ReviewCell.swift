@@ -84,7 +84,7 @@ class ReviewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             starsStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             starsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            starsStackView.heightAnchor.constraint(equalToConstant: 15)
+            starsStackView.heightAnchor.constraint(equalToConstant: 22)
         ])
         
         NSLayoutConstraint.activate([
@@ -135,6 +135,8 @@ class ReviewCell: UITableViewCell {
         if let content = reviewResult.content {
             authorComment.text = content
         }
+        
+//        if let totalRewiews = reviewResult.
         
         if let createdAt = reviewResult.created_at {
             setDateInFormat(createdAt)
@@ -196,7 +198,7 @@ class ReviewCell: UITableViewCell {
             
             for count in 1...5 {
                 let starView = UIImageView(image: count <= rating ? filllStarImage : starImage)
-                starView.widthAnchor.constraint(equalToConstant: 16).isActive = true
+                starView.widthAnchor.constraint(equalToConstant: 22).isActive = true
                 starView.tintColor = starTintColor
                 
                 starView.image = rating < count ? starImage : filllStarImage
