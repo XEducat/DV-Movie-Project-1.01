@@ -25,6 +25,20 @@
 		B27098FD2A1DFC6E008FB9A0 /* Logos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098FC2A1DFC6E008FB9A0 /* Logos.swift */; };
 		B27098FF2A1DFC8D008FB9A0 /* Posters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27098FE2A1DFC8D008FB9A0 /* Posters.swift */; };
 		B27099012A1DFC9E008FB9A0 /* MovieFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27099002A1DFC9E008FB9A0 /* MovieFrames.swift */; };
+		EE5ED5A92A1F78FA009CD15C /* PageOfMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5ED5A82A1F78FA009CD15C /* PageOfMovieVC.swift */; };
+		EE5ED5AB2A1F8E48009CD15C /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5ED5AA2A1F8E48009CD15C /* MovieCollectionViewCell.swift */; };
+		EE92DB882A1E1F3D00385639 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB872A1E1F3D00385639 /* CustomSegmentControl.swift */; };
+		EE92DB8C2A1E1F8400385639 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE92DB8B2A1E1F8400385639 /* Montserrat-Medium.ttf */; };
+		EE92DB8E2A1E1F9300385639 /* TestFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE92DB8D2A1E1F9300385639 /* TestFont.ttf */; };
+		EE92DB932A1E202600385639 /* FourTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB8F2A1E202600385639 /* FourTabBarVC.swift */; };
+		EE92DB942A1E202600385639 /* MovieInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB902A1E202600385639 /* MovieInfoVC.swift */; };
+		EE92DB952A1E202600385639 /* TheerdTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB912A1E202600385639 /* TheerdTabBarVC.swift */; };
+		EE92DB962A1E202600385639 /* MovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB922A1E202600385639 /* MovieVC.swift */; };
+		EE92DB9A2A1E20B600385639 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB972A1E20B600385639 /* HomeViewController.swift */; };
+		EE92DB9B2A1E20B600385639 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB982A1E20B600385639 /* TabBarController.swift */; };
+		EE92DB9C2A1E20B600385639 /* MovieNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB992A1E20B600385639 /* MovieNavigationController.swift */; };
+		EE92DBA02A1E3DBA00385639 /* MoviesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DB9F2A1E3DBA00385639 /* MoviesInfo.swift */; };
+		EE92DBA22A1E3E0200385639 /* MovieInfoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92DBA12A1E3E0200385639 /* MovieInfoResult.swift */; };
 		F59CBD561E6D509D52AE7824 /* Pods_DV_Movie_Project_1_01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183E122ED03AF738E17C296A /* Pods_DV_Movie_Project_1_01.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +66,20 @@
 		B27098FC2A1DFC6E008FB9A0 /* Logos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logos.swift; sourceTree = "<group>"; };
 		B27098FE2A1DFC8D008FB9A0 /* Posters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posters.swift; sourceTree = "<group>"; };
 		B27099002A1DFC9E008FB9A0 /* MovieFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFrames.swift; sourceTree = "<group>"; };
+		EE5ED5A82A1F78FA009CD15C /* PageOfMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOfMovieVC.swift; sourceTree = "<group>"; };
+		EE5ED5AA2A1F8E48009CD15C /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE92DB872A1E1F3D00385639 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
+		EE92DB8B2A1E1F8400385639 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		EE92DB8D2A1E1F9300385639 /* TestFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestFont.ttf; sourceTree = "<group>"; };
+		EE92DB8F2A1E202600385639 /* FourTabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourTabBarVC.swift; sourceTree = "<group>"; };
+		EE92DB902A1E202600385639 /* MovieInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfoVC.swift; sourceTree = "<group>"; };
+		EE92DB912A1E202600385639 /* TheerdTabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheerdTabBarVC.swift; sourceTree = "<group>"; };
+		EE92DB922A1E202600385639 /* MovieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieVC.swift; sourceTree = "<group>"; };
+		EE92DB972A1E20B600385639 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EE92DB982A1E20B600385639 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EE92DB992A1E20B600385639 /* MovieNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieNavigationController.swift; sourceTree = "<group>"; };
+		EE92DB9F2A1E3DBA00385639 /* MoviesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesInfo.swift; sourceTree = "<group>"; };
+		EE92DBA12A1E3E0200385639 /* MovieInfoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +124,8 @@
 		B22F12592A1DE68E000293A0 /* DV Movie Project 1.01 */ = {
 			isa = PBXGroup;
 			children = (
+				EE92DB862A1E1F0C00385639 /* CustomUIElements */,
+				EE5F3E8B2A1E1D7D0041F83E /* UIHelper */,
 				B27098F02A1DF7B8008FB9A0 /* Extentions */,
 				B27098E92A1DF745008FB9A0 /* Models */,
 				B27098E42A1DF6AE008FB9A0 /* Controllers */,
@@ -112,6 +142,14 @@
 		B27098E42A1DF6AE008FB9A0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE92DB972A1E20B600385639 /* HomeViewController.swift */,
+				EE92DB992A1E20B600385639 /* MovieNavigationController.swift */,
+				EE92DB982A1E20B600385639 /* TabBarController.swift */,
+				EE92DB922A1E202600385639 /* MovieVC.swift */,
+				EE92DB902A1E202600385639 /* MovieInfoVC.swift */,
+				EE92DB912A1E202600385639 /* TheerdTabBarVC.swift */,
+				EE92DB8F2A1E202600385639 /* FourTabBarVC.swift */,
+				EE5ED5A82A1F78FA009CD15C /* PageOfMovieVC.swift */,
 				B27098F52A1DFA65008FB9A0 /* Cells */,
 				B27098E52A1DF6C4008FB9A0 /* CastAndCrewVC.swift */,
 				B27098E72A1DF734008FB9A0 /* MovieFramesVC.swift */,
@@ -125,10 +163,12 @@
 				B27098EE2A1DF786008FB9A0 /* Film.swift */,
 				B27098EA2A1DF75E008FB9A0 /* Cast.swift */,
 				B27098EC2A1DF770008FB9A0 /* Crew.swift */,
+				B27099002A1DFC9E008FB9A0 /* MovieFrames.swift */,
 				B27098FA2A1DFC5A008FB9A0 /* Backdrops.swift */,
 				B27098FC2A1DFC6E008FB9A0 /* Logos.swift */,
 				B27098FE2A1DFC8D008FB9A0 /* Posters.swift */,
-				B27099002A1DFC9E008FB9A0 /* MovieFrames.swift */,
+				EE92DB9F2A1E3DBA00385639 /* MoviesInfo.swift */,
+				EE92DBA12A1E3E0200385639 /* MovieInfoResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -145,10 +185,28 @@
 		B27098F52A1DFA65008FB9A0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EE5ED5AA2A1F8E48009CD15C /* MovieCollectionViewCell.swift */,
 				B27098F62A1DFA74008FB9A0 /* ActorCell.swift */,
 				B27098F82A1DFC17008FB9A0 /* FrameCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		EE5F3E8B2A1E1D7D0041F83E /* UIHelper */ = {
+			isa = PBXGroup;
+			children = (
+				EE92DB8D2A1E1F9300385639 /* TestFont.ttf */,
+				EE92DB8B2A1E1F8400385639 /* Montserrat-Medium.ttf */,
+			);
+			path = UIHelper;
+			sourceTree = "<group>";
+		};
+		EE92DB862A1E1F0C00385639 /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				EE92DB872A1E1F3D00385639 /* CustomSegmentControl.swift */,
+			);
+			path = CustomUIElements;
 			sourceTree = "<group>";
 		};
 		F30820AC59F385073F6D9EF6 /* Frameworks */ = {
@@ -221,6 +279,8 @@
 			files = (
 				B22F126F2A1DE8B0000293A0 /* Podfile in Resources */,
 				B22F12672A1DE68F000293A0 /* LaunchScreen.storyboard in Resources */,
+				EE92DB8E2A1E1F9300385639 /* TestFont.ttf in Resources */,
+				EE92DB8C2A1E1F8400385639 /* Montserrat-Medium.ttf in Resources */,
 				B22F12642A1DE68F000293A0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,12 +334,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE92DB952A1E202600385639 /* TheerdTabBarVC.swift in Sources */,
 				B27099012A1DFC9E008FB9A0 /* MovieFrames.swift in Sources */,
+				EE92DB962A1E202600385639 /* MovieVC.swift in Sources */,
 				B22F125B2A1DE68E000293A0 /* AppDelegate.swift in Sources */,
+				EE92DB9B2A1E20B600385639 /* TabBarController.swift in Sources */,
+				EE92DBA02A1E3DBA00385639 /* MoviesInfo.swift in Sources */,
 				B27098F92A1DFC17008FB9A0 /* FrameCell.swift in Sources */,
 				B27098FF2A1DFC8D008FB9A0 /* Posters.swift in Sources */,
+				EE92DB9A2A1E20B600385639 /* HomeViewController.swift in Sources */,
+				EE92DB882A1E1F3D00385639 /* CustomSegmentControl.swift in Sources */,
+				EE5ED5AB2A1F8E48009CD15C /* MovieCollectionViewCell.swift in Sources */,
+				EE92DBA22A1E3E0200385639 /* MovieInfoResult.swift in Sources */,
 				B27098FD2A1DFC6E008FB9A0 /* Logos.swift in Sources */,
+				EE5ED5A92A1F78FA009CD15C /* PageOfMovieVC.swift in Sources */,
 				B27098E82A1DF734008FB9A0 /* MovieFramesVC.swift in Sources */,
+				EE92DB942A1E202600385639 /* MovieInfoVC.swift in Sources */,
+				EE92DB932A1E202600385639 /* FourTabBarVC.swift in Sources */,
+				EE92DB9C2A1E20B600385639 /* MovieNavigationController.swift in Sources */,
 				B27098FB2A1DFC5A008FB9A0 /* Backdrops.swift in Sources */,
 				B27098ED2A1DF770008FB9A0 /* Crew.swift in Sources */,
 				B27098F72A1DFA74008FB9A0 /* ActorCell.swift in Sources */,
@@ -428,7 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AA8GGTV3DY;
+				DEVELOPMENT_TEAM = ZPABP46356;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DV Movie Project 1.01/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -440,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "qe.DV-Movie-Project-1-01";
+				PRODUCT_BUNDLE_IDENTIFIER = qfaoigqr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -456,7 +528,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AA8GGTV3DY;
+				DEVELOPMENT_TEAM = ZPABP46356;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DV Movie Project 1.01/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -468,7 +540,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "qe.DV-Movie-Project-1-01";
+				PRODUCT_BUNDLE_IDENTIFIER = qfaoigqr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

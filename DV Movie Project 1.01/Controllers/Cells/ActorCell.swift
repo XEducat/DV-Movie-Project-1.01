@@ -56,15 +56,16 @@ class ActorCell: UITableViewCell {
     private func setupLabelName(text: String) {
         lblName.textColor = .white
         lblName.SetWithLimit(text: text, characterLimit: 13)
-        lblName.font = UIFont(name: "Arial", size: 16) // TODO: Заменить на нормальный шрифт
+        lblName.font = UIFont(name: "Arial", size: 14) // TODO: Заменить на нормальный шрифт
     }
+    
     
     /// Виставляє параметри до lblCharacter
     private func setupLabelCharacter(text: String) {
         lblCharacter.lineBreakMode = .byWordWrapping
         lblCharacter.SetWithLimit(text: text, characterLimit: 12)
         lblCharacter.textColor = .gray
-        lblCharacter.font = UIFont(name: "Arial", size: 14) // TODO: Заменить на нормальный шрифт
+        lblCharacter.font = UIFont(name: "Arial", size: 12) // TODO: Заменить на нормальный шрифт
     }
     
     /// Налаштовує обмеження (constraints) всіх елементів на клітінці (сell)
@@ -90,7 +91,7 @@ class ActorCell: UITableViewCell {
         NSLayoutConstraint.activate([
             lblCharacter.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             lblCharacter.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
-            lblCharacter.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 240)
+            lblCharacter.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 260)
         ])
     }
 }
