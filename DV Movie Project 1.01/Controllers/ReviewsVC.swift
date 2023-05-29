@@ -114,6 +114,7 @@ class ReviewsVC: UIViewController {
     private func calculateAverageRating() {
         guard !reviews.isEmpty else {
             totalRating.text = "0.0/5"
+            setupStarsStackView(rating: 0)
             return
         }
         
