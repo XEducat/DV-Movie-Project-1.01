@@ -2,33 +2,30 @@ import Foundation
 
 /// Submodel for MovieFrames
 struct Logos : Codable {
-    let aspect_ratio : Double?
+    let aspectRatio : Double?
     let height : Int?
-    let iso_639_1 : String?
-    let file_path : String?
-    let vote_average : Double?
-    let vote_count : Int?
+    let filePath : String?
+    let voteAverage : Double?
+    let voteCount : Int?
     let width : Int?
 
     enum CodingKeys: String, CodingKey {
 
-        case aspect_ratio = "aspect_ratio"
+        case aspectRatio = "aspect_ratio"
         case height = "height"
-        case iso_639_1 = "iso_639_1"
-        case file_path = "file_path"
-        case vote_average = "vote_average"
-        case vote_count = "vote_count"
+        case filePath = "file_path"
+        case voteAverage = "vote_average"
+        case voteCount = "vote_count"
         case width = "width"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        aspect_ratio = try values.decodeIfPresent(Double.self, forKey: .aspect_ratio)
+        aspectRatio = try values.decodeIfPresent(Double.self, forKey: .aspectRatio)
         height = try values.decodeIfPresent(Int.self, forKey: .height)
-        iso_639_1 = try values.decodeIfPresent(String.self, forKey: .iso_639_1)
-        file_path = try values.decodeIfPresent(String.self, forKey: .file_path)
-        vote_average = try values.decodeIfPresent(Double.self, forKey: .vote_average)
-        vote_count = try values.decodeIfPresent(Int.self, forKey: .vote_count)
+        filePath = try values.decodeIfPresent(String.self, forKey: .filePath)
+        voteAverage = try values.decodeIfPresent(Double.self, forKey: .voteAverage)
+        voteCount = try values.decodeIfPresent(Int.self, forKey: .voteCount)
         width = try values.decodeIfPresent(Int.self, forKey: .width)
     }
 }

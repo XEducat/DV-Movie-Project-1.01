@@ -5,14 +5,14 @@ struct Cast : Codable {
     let adult : Bool?
     let gender : Int?
     let id : Int?
-    let known_for_department : String?
+    let knownForDepartment : String?
     let name : String?
-    let original_name : String?
+    let originalName : String?
     let popularity : Double?
-    let profile_path : String?
-    let cast_id : Int?
+    let profilePath : String?
+    let castId : Int?
     let character : String?
-    let credit_id : String?
+    let creditId : String?
     let order : Int?
 
     enum CodingKeys: String, CodingKey {
@@ -20,14 +20,14 @@ struct Cast : Codable {
         case adult = "adult"
         case gender = "gender"
         case id = "id"
-        case known_for_department = "known_for_department"
+        case knownForDepartment = "known_for_department"
         case name = "name"
-        case original_name = "original_name"
+        case originalName = "original_name"
         case popularity = "popularity"
-        case profile_path = "profile_path"
-        case cast_id = "cast_id"
+        case profilePath = "profile_path"
+        case castId = "cast_id"
         case character = "character"
-        case credit_id = "credit_id"
+        case creditId = "credit_id"
         case order = "order"
     }
 
@@ -36,14 +36,14 @@ struct Cast : Codable {
         adult = try values.decodeIfPresent(Bool.self, forKey: .adult)
         gender = try values.decodeIfPresent(Int.self, forKey: .gender)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
-        known_for_department = try values.decodeIfPresent(String.self, forKey: .known_for_department)
+        knownForDepartment = try values.decodeIfPresent(String.self, forKey: .knownForDepartment)
         name = try values.decodeIfPresent(String.self, forKey: .name)
-        original_name = try values.decodeIfPresent(String.self, forKey: .original_name)
+        originalName = try values.decodeIfPresent(String.self, forKey: .originalName)
         popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
-        profile_path = try values.decodeIfPresent(String.self, forKey: .profile_path)
-        cast_id = try values.decodeIfPresent(Int.self, forKey: .cast_id)
+        profilePath = try values.decodeIfPresent(String.self, forKey: .profilePath)
+        castId = try values.decodeIfPresent(Int.self, forKey: .castId)
         character = try values.decodeIfPresent(String.self, forKey: .character)
-        credit_id = try values.decodeIfPresent(String.self, forKey: .credit_id)
+        creditId = try values.decodeIfPresent(String.self, forKey: .creditId)
         order = try values.decodeIfPresent(Int.self, forKey: .order)
     }
 

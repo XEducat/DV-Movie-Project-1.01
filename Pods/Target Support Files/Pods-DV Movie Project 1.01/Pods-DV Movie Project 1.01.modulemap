@@ -1,0 +1,6 @@
+framework module Pods_DV_Movie_Project_1_01 {
+  umbrella header "Pods-DV Movie Project 1.01-umbrella.h"
+
+  export *
+  module * { export * }
+}

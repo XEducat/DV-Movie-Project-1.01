@@ -1,5 +1,6 @@
 import Foundation
 
+/// Model for info about film from TMDB
 struct Film : Codable {
     let id : Int?
     let cast : [Cast]?

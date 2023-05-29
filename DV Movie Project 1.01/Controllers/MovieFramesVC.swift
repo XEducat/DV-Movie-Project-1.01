@@ -24,7 +24,7 @@ class MovieFramesVC: UIViewController {
         setupConstraints()
     }
     
-    /// Добавляє елементи на view
+    /// Добавляє UITableView на view
     private func setupTableView() {
         tableView = UITableView()
         tableView.rowHeight = rowHeigth
@@ -47,7 +47,7 @@ class MovieFramesVC: UIViewController {
         ])
     }
     
-    /// Підвантажує кадри з фільму в масів [movieFrames]
+    /// Підвантажує кадри з фільму в масив movieFrames
     private func fetchMovieFrames(movieId: Int) {
         let apiKey = "871ddc96a542d766d2b0fe03fc0ac3d1"
         
