@@ -137,8 +137,7 @@ class ReviewsVC: UIViewController {
                 let starView = UIImageView(image: count <= rating ? filllStarImage : starImage)
                 starView.widthAnchor.constraint(equalToConstant: 30).isActive = true
                 starView.tintColor = starTintColor
-                
-                starView.image = rating < count ? starImage : filllStarImage
+
                 if totalRatingStars.arrangedSubviews.count < 5 {
                     totalRatingStars.addArrangedSubview(starView)
                 }

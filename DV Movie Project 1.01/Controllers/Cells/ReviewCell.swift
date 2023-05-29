@@ -201,7 +201,6 @@ class ReviewCell: UITableViewCell {
                 starView.widthAnchor.constraint(equalToConstant: 22).isActive = true
                 starView.tintColor = starTintColor
                 
-                starView.image = rating < count ? starImage : filllStarImage
                 if starsStackView.arrangedSubviews.count < 5 {
                     starsStackView.addArrangedSubview(starView)
                 }

@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 window = UIWindow(frame: windowScene.coordinateSpace.bounds)
                 window?.windowScene = windowScene
 //                window?.rootViewController = MovieFramesVC(movieID: 550)
-                window?.rootViewController = CastAndCrewVC(movieID: 550)
+                window?.rootViewController = TrailersVC(movieID: 110)
                 window?.makeKeyAndVisible()
     }
 

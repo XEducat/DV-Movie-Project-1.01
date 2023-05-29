@@ -25,6 +25,8 @@ class TrailersVC: UIViewController {
         view.backgroundColor = UIColor.darkBlue
         tableView.delegate = self
         tableView.dataSource = self
+        
+//        tableView.allowsSelection = false
         setupTableView()
         setupConstraints()
     }
@@ -78,10 +80,7 @@ extension TrailersVC: UITableViewDelegate, UITableViewDataSource {
     /// Повертає налаштований блок ( cell )
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TrailerCell {
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = .darkBlue
-            cell.selectedBackgroundView = backgroundView
-            cell.configure(with: videos[indexPath.row])
+            cell.configCell(result: videos[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -91,4 +90,6 @@ extension TrailersVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
+    
+  
 }
