@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import youtube_ios_player_helper
 
 class PageOfMovieVC: UIViewController {
     var scrollView = UIScrollView()
@@ -32,17 +33,20 @@ class PageOfMovieVC: UIViewController {
     var videoStackView = UIStackView()
     var videoScrollView = UIScrollView()
     
-    var firstVideo = UIImageView()
-    var secondVideo = UIImageView()
-    var theerdVideo = UIImageView()
-    var fourVideo = UIImageView()
-    var fiveVideo = UIImageView()
-//    var filmId: Int?
+    var firstVideo = YTPlayerView()
+    var secondVideo = YTPlayerView()
+    var theerdVideo = YTPlayerView()
+    var fourVideo = YTPlayerView()
+    var fiveVideo = YTPlayerView()
     
     var filmInfo: MovieInfoResult?
     
+    var reviewStackView = UIStackView()
+    var reviewTableView = UITableView()
+    
     let apiKey = "f5fc273d435f10ca0130435f60524443"
     
+    var reviews:[ReviewResult] = []
     var cast: [Cast] = []
     var backdrops: [Backdrops] = []
     
@@ -61,6 +65,8 @@ class PageOfMovieVC: UIViewController {
         castAndCrewTableView.delegate = self
         castAndCrewTableView.dataSource = self
         
+        reviewTableView.delegate = self
+        reviewTableView.dataSource = self
         
         addSubviews()
         setConstraints()
@@ -77,6 +83,11 @@ class PageOfMovieVC: UIViewController {
         fetchMovieFrames(movieId: filmInfo?.id ?? 0)
         
         fetchCast(movieID: filmInfo?.id ?? 0)
+        fetchVideos(movieId: filmInfo?.id ?? 0)
+        
+        configReviewStackView()
+        
+        fetchReviews(movieId: filmInfo?.id ?? 0)
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,10 +103,10 @@ class PageOfMovieVC: UIViewController {
     private func addSubviews() {
         self.view.addSubview(scrollView)
         
-        [titleOfMovieLabel, backImage, posterImageView, releaseAndRatingMovieLabel, genreOfMovie, RatingAndStarsStackView, descriptionOfMovieLabel,descriptionTextOfMovieLabel,castAndCrewStackView,castAndCrewTableView,photosStackView, photosScrollView,videoStackView,videoScrollView].forEach {
+        [titleOfMovieLabel, backImage, posterImageView, releaseAndRatingMovieLabel, genreOfMovie, RatingAndStarsStackView, descriptionOfMovieLabel,descriptionTextOfMovieLabel,castAndCrewStackView,castAndCrewTableView,photosStackView, photosScrollView,videoStackView,videoScrollView,reviewStackView, reviewTableView ].forEach {
             scrollView.addSubview($0)
         }
-       
+        
         [firstPhoto,secondPhoto,theerdPhoto,fourPhoto,fivePhoto].forEach {
             photosScrollView.addSubview($0)
         }
@@ -118,15 +129,14 @@ class PageOfMovieVC: UIViewController {
                     blurFilter?.setValue(CIImage(image: image), forKey: kCIInputImageKey)
                     blurFilter?.setValue(4, forKey: kCIInputRadiusKey)
                     if let outputImage = blurFilter?.outputImage {
-                    let context = CIContext(options: nil)
-                    if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-                    let blurredImage = UIImage(cgImage: cgImage)
-                    self?.backImage.image = blurredImage
+                        let context = CIContext(options: nil)
+                        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                            let blurredImage = UIImage(cgImage: cgImage)
+                            self?.backImage.image = blurredImage
                         }
                     }
                 }
-             }.resume()
-            
+            }.resume()
         }
         
         //backImage.image = UIImage(named: "ImageTransformers")
@@ -157,7 +167,7 @@ class PageOfMovieVC: UIViewController {
         descriptionOfMovieLabel.textColor = .white
         
         castAndCrewTableView.backgroundColor = .darkBlue
-        castAndCrewTableView.register(ActorCell.self, forCellReuseIdentifier: "TableViewCell")
+        castAndCrewTableView.register(ActorCell.self, forCellReuseIdentifier: "ActorCell")
         
         photosScrollView.backgroundColor = .darkBlue
         
@@ -171,10 +181,13 @@ class PageOfMovieVC: UIViewController {
             $0.backgroundColor = .white
         }
         
+        reviewTableView.backgroundColor = .darkBlue
+        reviewTableView.register(ReviewCell.self, forCellReuseIdentifier: "ReviewCell")
+        
     }
     
     private func setConstraints() {
-        [titleOfMovieLabel, backImage,posterImageView,releaseAndRatingMovieLabel, genreOfMovie,RatingAndStarsStackView,descriptionOfMovieLabel,descriptionTextOfMovieLabel,castAndCrewStackView,castAndCrewTableView, photosStackView, photosScrollView,firstPhoto,secondPhoto,theerdPhoto,fourPhoto,fivePhoto, videoStackView, videoScrollView, firstVideo, secondVideo, theerdVideo, fourVideo, fiveVideo].forEach {
+        [titleOfMovieLabel, backImage,posterImageView,releaseAndRatingMovieLabel, genreOfMovie,RatingAndStarsStackView,descriptionOfMovieLabel,descriptionTextOfMovieLabel,castAndCrewStackView,castAndCrewTableView, photosStackView, photosScrollView,firstPhoto,secondPhoto,theerdPhoto,fourPhoto,fivePhoto, videoStackView, videoScrollView, firstVideo, secondVideo, theerdVideo, fourVideo, fiveVideo,reviewStackView, reviewTableView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -348,10 +361,24 @@ class PageOfMovieVC: UIViewController {
             fiveVideo.heightAnchor.constraint(equalToConstant: 230),
             fiveVideo.widthAnchor.constraint(equalToConstant: 300)
         ])
+        
+        NSLayoutConstraint.activate([
+            reviewStackView.topAnchor.constraint(equalTo: self.videoScrollView.bottomAnchor, constant: 30),
+            reviewStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 18),
+            reviewStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: -18),
+            reviewStackView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
+            reviewTableView.topAnchor.constraint(equalTo: self.reviewStackView.bottomAnchor, constant: 10),
+            reviewTableView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
+            reviewTableView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
+            reviewTableView.heightAnchor.constraint(equalToConstant: 800)
+        ])
     }
     
     private func setTextsForLabels() {
-        var releaseData = filmInfo?.release_date ?? ""
+        let releaseData = filmInfo?.release_date ?? ""
         if let adult = filmInfo?.adult{
             let ratingMovie = adult ? "R" : "G"
             releaseAndRatingMovieLabel.text = "\(releaseData) | \(ratingMovie)"
@@ -409,7 +436,7 @@ class PageOfMovieVC: UIViewController {
                 }
                 
                 let genreLabelText = genreIdStrings.joined(separator: ", ")
-                    genreOfMovie.text = genreLabelText
+                genreOfMovie.text = genreLabelText
                 
                 descriptionOfMovieLabel.text = "Synopsis"
                 
@@ -417,7 +444,7 @@ class PageOfMovieVC: UIViewController {
                 
                 descriptionTextOfMovieLabel.text = filmInfo?.overview ?? ""
                 
-                if let voteAverage = filmInfo?.vote_average {
+                if (filmInfo?.vote_average) != nil {
                     if let voteAverage = filmInfo?.vote_average {
                         let ratingLabel = UILabel()
                         ratingLabel.text = String("\(voteAverage / 2)/5")
@@ -435,20 +462,20 @@ class PageOfMovieVC: UIViewController {
         if countOfElements >= 0 && countOfElements <= 5 {
             RatingAndStarsStackView.distribution = .equalSpacing
             
-                let filllStarImage = UIImage(systemName: "star.fill")
-                let starImage = UIImage(systemName: "star")
-                let starTintColor = UIColor(#colorLiteral(red: 1, green: 0.7529411765, blue: 0.2705882353, alpha: 1))
+            let filllStarImage = UIImage(systemName: "star.fill")
+            let starImage = UIImage(systemName: "star")
+            let starTintColor = UIColor(#colorLiteral(red: 1, green: 0.7529411765, blue: 0.2705882353, alpha: 1))
+            
+            for count in 0...4 {
+                let starView = UIImageView(image: count < (countOfElements) ? filllStarImage : starImage)
+                starView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+                starView.tintColor = starTintColor
                 
-                for count in 0...4 {
-                    let starView = UIImageView(image: count < (countOfElements) ? filllStarImage : starImage)
-                    starView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-                    starView.tintColor = starTintColor
-                    
-                    if RatingAndStarsStackView.arrangedSubviews.count <= 5 {
-                        RatingAndStarsStackView.addArrangedSubview(starView)
-                    }
+                if RatingAndStarsStackView.arrangedSubviews.count <= 5 {
+                    RatingAndStarsStackView.addArrangedSubview(starView)
                 }
             }
+        }
         
     }
     private func configCastAndCrewStackView() {
@@ -504,47 +531,49 @@ class PageOfMovieVC: UIViewController {
         viewAllVideosButton.setTitleColor(.systemTeal, for: .normal)
         videoStackView.addArrangedSubview(viewAllVideosButton)
         
-        //  viewAllButton.addTarget(self, action: #selector(viewAllButtonTapped), for: .touchUpInside)
+        viewAllVideosButton.addTarget(self, action: #selector(viewAllVideoButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func viewAllVideoButtonTapped() {
+        let trailersvc = TrailersVC(movieID: filmInfo?.id ?? 0)
+        navigationController?.pushViewController(trailersvc, animated: true)
+        
+    }
+    
+    private func configReviewStackView() {
+        let textReviewLabel = UILabel()
+        textReviewLabel.text = "Review"
+        textReviewLabel.font = UIFont(name: "Montserrat-Medium", size: 18)
+        textReviewLabel.textColor = .white
+        reviewStackView.addArrangedSubview(textReviewLabel)
+        
+        let viewAllReviewButton = UIButton()
+        viewAllReviewButton.setTitle("View All", for: .normal)
+        viewAllReviewButton.setTitleColor(.systemTeal, for: .normal)
+        reviewStackView.addArrangedSubview(viewAllReviewButton)
+        
+        viewAllReviewButton.addTarget(self, action: #selector(viewAllReviewButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func viewAllReviewButtonTapped() {
+        let reviewvc = ReviewsVC(movieID: filmInfo?.id ?? 0)
+        navigationController?.pushViewController(reviewvc, animated: true)
     }
     
     
-    //    private func configCastAndCrewStackView() {
-    //        let textLabel = UILabel()
-    //                textLabel.text = "Cast & Crew"
-    //                textLabel.font = UIFont(name: "Montserrat-Medium", size: 18)
-    //                textLabel.textColor = .white
-    //        castAndCrewStackView.addArrangedSubview(textLabel)
-    //        let viewAllButton = UIButton()
-    //        viewAllButton.setTitle("View All", for: .normal)
-    //        viewAllButton.setTitleColor(.systemTeal, for: .normal)
-    //        castAndCrewStackView.addArrangedSubview(viewAllButton)
-    //
-    //        viewAllButton.addTarget(self, action: #selector(viewAllButtonTapped), for: .touchUpInside)
-    //
-    //        @objc private func viewAllButtonTapped() {
-    //            let castAndCrewVC = CastAndCrewVC(filmInfo: filmInfo)
-    //            navigationController?.pushViewController(castAndCrewVC, animated: true)
-    //        }
-    //}
-    
-    //    public func configCell(_ filmInfo: MovieInfoResult) {
-    //        if let voteAverage = filmInfo.vote_average {
-    //            configStarsStackView(Int(voteAverage / 2))
-    //        }
-    //    }
-    
     private func configScroll() {
-        let contentHeight = castAndCrewTableView.frame.origin.y + castAndCrewTableView.frame.height + 630
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: contentHeight)
+        let lastElementFrame = reviewTableView.frame
+            let contentHeight = lastElementFrame.origin.y + lastElementFrame.height 
+            scrollView.contentSize = CGSize(width: scrollView.frame.width, height: contentHeight)
     }
     
     private func configPhotoScroll() {
-        let contentHeight = castAndCrewTableView.frame.origin.y + castAndCrewTableView.frame.height
+        
         photosScrollView.contentSize = CGSize(width: 1585, height: photosScrollView.frame.height)
     }
     
     private func configVideoScroll() {
-        let contentHeight = castAndCrewTableView.frame.origin.y + castAndCrewTableView.frame.height - 30
+        
         videoScrollView.contentSize = CGSize(width: 1585, height: videoScrollView.frame.height)
     }
     
@@ -577,7 +606,7 @@ class PageOfMovieVC: UIViewController {
                 while i < backdropsCount {
                     if i <= (self.photosScrollView.subviews.count - 1) {
                         if let photoView = self.photosScrollView.subviews[i] as? UIImageView {
-                            let imageUrlString = "https://image.tmdb.org/t/p/w500" + (self.backdrops[i].file_path ?? "")
+                            let imageUrlString = "https://image.tmdb.org/t/p/w500" + (self.backdrops[i].filePath ?? "")
                             AF.request(imageUrlString).responseData { response in
                                 switch response.result {
                                 case .success(let imageData):
@@ -589,26 +618,66 @@ class PageOfMovieVC: UIViewController {
                                 }
                             }
                         }
-
+                        
                         
                     }
                     i += 1
                 }
-                
-                //                let imageUrlString = "https://image.tmdb.org/t/p/w500" + filePath
-                //                AF.request(imageUrlString).responseData { response in
-                //                    switch response.result {
-                //                    case .success(let imageData):
-                //                        if let image = UIImage(data: imageData) {
-                //                            self.frameImageView.image = image
-                //                        }
-                //                    case .failure(let error):
-                //                        print("Error downloading image: \(error)")
-                //                    }
-                //                }
-                // self.photosScrollView.reloadData()
             case .failure(let error):
                 print("Error fetching movie frames: \(error)")
+            }
+        }
+    }
+    
+    private func fetchVideos(movieId: Int) {
+        
+        let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/images?api_key=\(apiKey)"
+        
+        AF.request(urlString).responseDecodable(of: MovieFrames.self) { response in
+            switch response.result {
+            case .success(let imageResponse):
+                self.backdrops = imageResponse.backdrops ?? []
+                
+                let backdropsCount = self.backdrops.count
+                
+                var i = 0
+                while i < backdropsCount {
+                    if i <= (self.videoScrollView.subviews.count - 1) {
+                        if let photoView = self.videoScrollView.subviews[i] as? UIImageView {
+                            let imageUrlString = "https://image.tmdb.org/t/p/w500" + (self.backdrops[i].filePath ?? "")
+                            AF.request(imageUrlString).responseData { response in
+                                switch response.result {
+                                case .success(let imageData):
+                                    if let image = UIImage(data: imageData) {
+                                        photoView.image = image
+                                    }
+                                case .failure(let error):
+                                    print("Error downloading image: \(error)")
+                                }
+                            }
+                        }
+                        
+                        
+                    }
+                    i += 1
+                }
+            case .failure(let error):
+                print("Error fetching movie frames: \(error)")
+            }
+        }
+    }
+    private func fetchReviews(movieId: Int) {
+        let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/reviews?api_key=\(apiKey)"
+        
+        AF.request(urlString).responseDecodable(of: Review.self) { response in
+            switch response.result {
+            case .success(let review):
+                if let results = review.results {
+                    self.reviews = results
+                    self.reviewTableView.reloadData()
+                }
+            case .failure(let error):
+                print("Error: \(error)")
             }
         }
     }
@@ -632,22 +701,60 @@ extension UIImage {
 }
 extension PageOfMovieVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? ActorCell {
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = .darkBlue
-            cell.selectedBackgroundView = backgroundView
-            cell.configCell(cast: cast[indexPath.row])
-            return cell
+        switch tableView {
+        case castAndCrewTableView: do {
+            if let cell = castAndCrewTableView.dequeueReusableCell(withIdentifier: "ActorCell", for: indexPath) as? ActorCell {
+                let backgroundView = UIView()
+                backgroundView.backgroundColor = .darkBlue
+                cell.selectedBackgroundView = backgroundView
+                cell.configCell(cast: cast[indexPath.row])
+                return cell
+            }
         }
+        case reviewTableView: do {
+            if let cell = reviewTableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as? ReviewCell {
+                let backgroundView = UIView()
+                backgroundView.backgroundColor = .darkBlue
+                cell.selectedBackgroundView = backgroundView
+                
+                
+                
+                cell.configure(with: reviews[indexPath.row])
+                return cell
+            }
+        }
+        default:
+            return UITableViewCell()
+        }
+        
         return UITableViewCell()
+     
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return min(4, cast.count)
-        //return cast.count
+        
+        switch tableView {
+        case castAndCrewTableView: do {
+            return cast.count < 4 ? cast.count : 4
+        }
+        case reviewTableView: do {
+            return reviews.count < 2 ? reviews.count : 2
+        }
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        switch tableView {
+        case castAndCrewTableView: do {
+            return 100
+        }
+        case reviewTableView: do {
+            return 400
+        }
+        default:
+            return 100
+        }
     }
 }

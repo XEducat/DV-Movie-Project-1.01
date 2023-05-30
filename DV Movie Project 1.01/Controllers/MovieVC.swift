@@ -39,7 +39,6 @@ class MovieVC: UIViewController{
             fetchMoviesInfo()
             let indexPath = IndexPath(item: 0, section: 0)
             movieCollectionView.scrollToItem(at: indexPath, at: .top, animated: false)
-            
         } else if segControl.selectedSegmentIndex == 1 {
             
             fetchMoviesInfoComingSoon()
@@ -56,8 +55,11 @@ class MovieVC: UIViewController{
     
     private func configSegControl() {
         let font = UIFont(name: "Montserrat-Medium", size: 16)
-        let attributes: [NSAttributedString.Key: Any] = [ .font: font!, ]
-        segControl.setTitleTextAttributes(attributes, for: .normal)
+        let normalAttributes: [NSAttributedString.Key: Any] = [.font: font!, .foregroundColor: UIColor.white]
+        let selectedAttributes: [NSAttributedString.Key: Any] = [.font: font!, .foregroundColor: UIColor.black]
+
+        segControl.setTitleTextAttributes(normalAttributes, for: .normal)
+        segControl.setTitleTextAttributes(selectedAttributes, for: .selected)
         segControl.insertSegment(withTitle: "Now Showing", at: 0, animated: false)
         segControl.insertSegment(withTitle: "Coming Soon", at: 1, animated: false)
         segControl.selectedSegmentIndex = 0

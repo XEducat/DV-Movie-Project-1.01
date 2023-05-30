@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "movie-app-icon-6.jpg.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

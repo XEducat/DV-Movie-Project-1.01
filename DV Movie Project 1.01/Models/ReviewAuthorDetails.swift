@@ -1,5 +1,6 @@
 import Foundation
 
+
 struct ReviewAuthorDetails : Codable {
     let name : String?
     let username : String?
