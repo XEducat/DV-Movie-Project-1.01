@@ -4,7 +4,4 @@
    <FileRef
       location = "group:DV Movie Project 1.01.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
 </Workspace>
